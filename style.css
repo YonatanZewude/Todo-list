@@ -62,7 +62,7 @@ li {
   font-size: 18px;
 }
 
-#delete-icon {
+.fa-solid {
   float: right;
   margin-right: 10px;
   cursor: pointer;
