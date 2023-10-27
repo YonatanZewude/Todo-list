@@ -34,8 +34,12 @@ export function addTaskToList(task) {
     task.changeDone();
     changeDisplay(newList, task);
     updateDoneButtonText(done, task);
-    tasks.push(task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    const taskToUpdate = tasks.find((t) => t.taskName === task.taskName);
+    if (taskToUpdate) {
+      taskToUpdate.isDone = task.isDone;
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
   });
 }
 
